@@ -74,7 +74,6 @@ function App() {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h1>User CRUD App</h1>
 
       <form onSubmit={handleSubmit}>
         <input name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
@@ -83,8 +82,7 @@ function App() {
         <input name="favoriteBookDescription" value={form.favoriteBookDescription} onChange={handleChange} placeholder="Book Description" required />
         <button type="submit">Add User</button>
       </form>
-
-      <h2>Users</h2>
+      
       <ul>
         {users.map((user) => (
           <li key={user._id}>
