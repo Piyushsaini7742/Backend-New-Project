@@ -73,23 +73,25 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div>
 
-      <form onSubmit={handleSubmit}>
-        <input name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
+      <form onSubmit={handleSubmit} className='m-[10px] p-[5px] bg-amber-300'>
+        <input className='p-[10px]' name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
         <input name="age" type="number" value={form.age} onChange={handleChange} placeholder="Age" required />
         <input name="favoriteBookTitle" value={form.favoriteBookTitle} onChange={handleChange} placeholder="Book Title" required />
         <input name="favoriteBookDescription" value={form.favoriteBookDescription} onChange={handleChange} placeholder="Book Description" required />
-        <button type="submit">Add User</button>
+        <button type="submit" className='bg-green-200 p-[5px]'>Add User</button>
       </form>
-      
+
       <ul>
         {users.map((user) => (
-          <li key={user._id}>
-            <strong>{user.name}</strong> (Age: {user.age})<br />
-            Book: {user.favoriteBook.title} - {user.favoriteBook.description}<br />
-            <button onClick={() => deleteUser(user._id)}>Delete</button>
-            <button onClick={() => updateUser(user._id)}>Update</button>
+          <li key={user._id} className='p-[5px]'>
+            <div className='m-[10px] p-[5px] bg-yellow-500'>
+              <strong className='p-[5px]'>{user.name}</strong> (Age: {user.age})<br />
+              Book: {user.favoriteBook.title} - {user.favoriteBook.description}<br />
+              <button onClick={() => deleteUser(user._id)} className='bg-red-500 m-[5px]'>Delete</button>
+              <button onClick={() => updateUser(user._id)} className='bg-blue-400 m-[5px]'>Update</button>
+            </div>
           </li>
         ))}
       </ul>
